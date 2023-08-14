@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <nav class="navbar">
+      <h1 class="heading">calc</h1>
+      <div class="theme-section">
+        <p class="change">THEME</p>
+        <div class="main-theme">
+          <div class="numbers">
+            <p class="number" id="number1" onclick="changeTheme(1)">1</p>
+            <p class="number" id="number2" onclick="changeTheme(2)">2</p>
+            <p class="number" id="number3" onclick="changeTheme(3)">3</p>
+          </div>
+          <div class="theme">
+            <span></span>
+          </div>
+        </div>
+        
+      </div>
+    </nav>
+
+    <div class="screen">
+      <input type="text" name="screen" id="screen" placeholder="0">
+    </div>
+
+    <div class="main-container">
+      <div class="sections">
+        <button class="btn" onclick="calculate(7)">7</button>
+        <button class="btn" onclick="calculate(8)">8</button>
+        <button class="btn" onclick="calculate(9)">9</button>
+        <button class="delete" onclick="
+        calculation = calculation.slice(0, -1);
+        userInput.value = calculation;">DEL</button>
+      </div>
+      <div class="sections">
+        <button class="btn" onclick="calculate(4)">4</button>
+        <button class="btn" onclick="calculate(5)">5</button>
+        <button class="btn" onclick="calculate(6)">6</button>
+        <button class="operator" id="btn" onclick="
+        calculation = `${calculation}+`;
+        userInput.value = calculation">+</button>
+      </div>
+      <div class="sections">
+        <button class="btn" onclick="calculate(1)">1</button>
+        <button class="btn" onclick="calculate(2)">2</button>
+        <button class="btn" onclick="calculate(3)">3</button>
+        <button class="operator" id="btn"onclick="
+        calculation = `${calculation}-`;
+        userInput.value = calculation">-</button>
+      </div>
+      <div class="sections">
+        <button class="btn" onclick="
+        calculation = `${calculation}.`;
+        userInput.value = calculation">.</button>
+        <button class="btn" onclick="calculate(0)">0</button>
+        <button class="operator" id="btn" 
+        onclick="
+        calculation = `${calculation} / `;
+        userInput.value = calculation">/</button>
+        <button class="operator" id="btn" 
+        onclick="
+        calculation = `${calculation}*`;
+        userInput.value = calculation">&times</button>
+      </div>
+      <div class="section">
+        <button class="reset"
+        onclick="
+        calculation = '';
+        userInput.value = calculation;">RESET</button>
+        <button class="evaluate"
+        onclick="
+        calculation = eval(calculation);
+        userInput.value = calculation
+        calculation = '';">=</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
